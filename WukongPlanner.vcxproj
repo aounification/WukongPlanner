@@ -18,6 +18,16 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="code\entryPoint.cpp" />
+    <ClCompile Include="code\WukongPlanner.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="code\WukongPlanner.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="code\WukongPlanner.hpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{0C0E09D9-BC27-45CB-9CBA-D249359DA415}</ProjectGuid>
@@ -76,9 +86,10 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <ModuleDefinitionFile>WukongPlanner.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>Code\WukongPlanner.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -103,11 +114,12 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ModuleDefinitionFile>WukongPlanner.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>Code\WukongPlanner.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -127,16 +139,6 @@
       <ModuleDefinitionFile>WukongPlanner.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="code\src\entryPoint.cpp" />
-    <ClCompile Include="WukongPlanner.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="WukongPlanner.def" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="WukongPlanner.hpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

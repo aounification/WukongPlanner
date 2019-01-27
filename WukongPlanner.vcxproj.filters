@@ -15,20 +15,20 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="code\src\entryPoint.cpp">
+    <ClCompile Include="code\entryPoint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WukongPlanner.cpp">
+    <ClCompile Include="code\WukongPlanner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="WukongPlanner.def">
+    <None Include="code\WukongPlanner.def">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="WukongPlanner.hpp">
+    <ClInclude Include="code\WukongPlanner.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
