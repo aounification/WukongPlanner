@@ -90,7 +90,7 @@ namespace tools
 		auto it = m_itemsPerWeek.find(week);
 		std::for_each(it->second.begin(), it->second.end(), [&](int position)
 		{
-			planItems[position].m_expectedDuration = week - planItems[position].m_plannedWeekStart;
+			planItems[position].m_expectedDuration = week - planItems[position].m_plannedWeekStart + 1;
 		});
 		m_capacityPerWeek[week] -= featuresCost;
 		return (m_capacityPerWeek[week] == 0);
@@ -131,7 +131,7 @@ namespace tools
 			{
 				remainingCapacity += capacityPerFeature - planItems[position].m_currentSP;
 				planItems[position].m_currentSP = 0;
-				planItems[position].m_expectedDuration = week - planItems[position].m_plannedWeekStart;
+				planItems[position].m_expectedDuration = week - planItems[position].m_plannedWeekStart + 1;
 				endedFeatures = true;
 			}
 		});
@@ -151,7 +151,7 @@ namespace tools
 					{
 						remainingCapacity -= planItems[it->second].m_currentSP;
 						planItems[it->second].m_currentSP = 0;
-						planItems[it->second].m_expectedDuration = week - planItems[it->second].m_plannedWeekStart;
+						planItems[it->second].m_expectedDuration = week - planItems[it->second].m_plannedWeekStart + 1;
 						endedFeatures = true;
 					}
 				}
@@ -170,7 +170,7 @@ namespace tools
 	bool WukongPlanner::addUnplannedFeatureToWeek(std::vector <PlanItem> &planItems, int week)
 	{
 		auto it = m_itemsPerWeek.find(-1);
-		if (m_itemsPerWeek.find(week) != m_itemsPerWeek.end())
+		if (it != m_itemsPerWeek.end())
 		{
 			int featurePosition = *(it->second.begin());
 			m_itemsPerWeek[week].push_back(featurePosition);
